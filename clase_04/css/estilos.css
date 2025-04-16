@@ -1,0 +1,44 @@
+h1{
+    color: #ff00cc;
+    font-size: 150px;
+    text-shadow: 12px 12px 4px rgba(0,0,0,0.5);
+}
+
+.corazon {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    background: red;
+    transform: rotate(-45deg);
+    margin: 100px auto;
+    animation: latido 1s infinite;
+  }
+
+  .corazon::before,
+  .corazon::after {
+    content: "";
+    width: 100px;
+    height: 90px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .corazon::before {
+    top: -50px;
+    left: 0;
+  }
+
+  .corazon::after {
+    left: 50px;
+    top: 0;
+  }
+
+  @keyframes latido {
+    0%, 100% {
+      transform: rotate(-45deg) scale(1);
+    }
+    50% {
+      transform: rotate(-45deg) scale(1.2);
+    }
+  }
